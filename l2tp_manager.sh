@@ -7,6 +7,7 @@ CRON_FILE="/etc/cron.d/l2tp_tunnels"
 function install_dependencies() {
     echo "[+] Installing required kernel modules..."
     sudo apt install -y linux-modules-extra-$(uname -r)
+    sudo apt install iproute2
     sudo modprobe l2tp_eth
     sudo modprobe l2tp_ip
     sudo modprobe ip_gre
